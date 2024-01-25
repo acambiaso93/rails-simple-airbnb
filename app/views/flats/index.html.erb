@@ -1,0 +1,21 @@
+<div>
+  <h1>All our Flats</h1>
+  <p>All <%= @flats.count %> flats.</p>
+</div>
+<div class="cards">
+  <% @flats.each do |flat| %>
+    <div class="card">
+      <img src="https://woodboom.de/cdn/shop/products/Eichenbett-Massivholz-schwebend_3_5b602874-dcae-42ff-8d5e-0a73314b97f6.jpg?v=1629705582" class="card-img-top" alt="...">
+      <div class="card-body bg-light">
+        <h5 class="card-title"><%= flat.name %></h5>
+        <p class="card-text">
+          <%= flat.address %> <br>
+          <i class="fa-solid fa-euro-sign"></i><%= flat.price_per_night %> <%= flat.number_of_guests %>
+        </p>
+      </div>
+      <div class="card-footer bg-white">
+        <%= link_to "More info", flat_path(flat) %>
+      </div>
+    </div>
+  <% end %>
+</div>
